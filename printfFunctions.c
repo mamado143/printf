@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
  * print_char - writes a character to stdout
  * @args: the va_list containing the character
