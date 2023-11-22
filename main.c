@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * main - function to test the _printf function.
- * @Return: 0 on successful execution.
+ * Return: returns 0 in success state.
  */
 int main(void)
 {
