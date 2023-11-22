@@ -7,11 +7,11 @@
  */
 void print_char(va_list args, int *count)
 {
-    char c = va_arg(args, int);
-    _putchar(c);
-    (*count)++;
-}
+	char c = va_arg(args, int);
 
+	_putchar(c);
+	(*count)++;
+}
 /**
  * print_str - writes a string to stdout
  * @args: the va_list containing the string
@@ -19,25 +19,24 @@ void print_char(va_list args, int *count)
  */
 void print_str(va_list args, int *count)
 {
-    char *str = va_arg(args, char *);
-    while (*str)
-    {
-        _putchar(*str);
-        str++;
-        (*count)++;
-    }
-}
+	char *str = va_arg(args, char *);
 
+	while (*str)
+	{
+		_putchar(*str);
+		str++;
+		(*count)++;
+	}
+}
 /**
  * print_percent - writes a percent sign to stdout
  * @count: pointer to the count of characters printed
  */
 void print_percent(int *count)
 {
-    _putchar('%');
-    (*count)++;
+	_putchar('%');
+	(*count)++;
 }
-
 /**
  * print_integer - writes an integer to stdout
  * @args: the va_list containing the integer
@@ -45,14 +44,15 @@ void print_percent(int *count)
  */
 void print_integer(va_list args, int *count)
 {
-    int num = va_arg(args, int);
-    char buffer[12];
-    sprintf(buffer, "%d", num);
-    char *str = buffer;
-    while (*str)
-    {
-        _putchar(*str);
-        str++;
-        (*count)++;
-    }
+	int num = va_arg(args, int);
+	char buffer[12];
+	char *str = buffer;
+
+	sprintf(buffer, "%d", num);
+	while (*str)
+	{
+		_putchar(*str);
+		str++;
+		(*count)++;
+	}
 }
