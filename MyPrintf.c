@@ -1,9 +1,8 @@
 #include "main.h"
 /**
  * _printf - prints formatted output to stdout
-i * @format: format string containing format specifiers
+ * @format: format string containing format specifiers
  * @...: additional arguments to be formatted
- *
  * Return: the number of characters printed (excluding the null byte)
  */
 int _printf(const char *format, ...)
@@ -12,29 +11,17 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	va_start(args, format);
+	if (!format)
+	{
+		fputs("Error: NULL format string\n", stderr);
+		return (-1);
+	}
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			switch (*format)
-			{
-				case 'c':
-					print_char(args, &count);
-					break;
-				case 's':
-					print_str(args, &count);
-					break;
-				case '%':
-					print_percent(&count);
-					break;
-				case 'd':
-				case 'i':
-					print_integer(args, &count);
-					break;
-				default:
-					break;
-			}
+			handle_format_specifier(&format, args, &count);
 		}
 		else
 		{
